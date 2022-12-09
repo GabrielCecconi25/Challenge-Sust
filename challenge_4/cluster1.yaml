@@ -1,0 +1,37 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: AppCluster
+  region: us-east-1
+  version: "1.21"
+vpc:
+  id: vpc-05d89af02a9b37af0
+  subnets:
+    public:
+      us-east-1a:
+        id: subnet-0eb9dbe61d9469a71
+      us-east-1b:
+        id: subnet-07e33ef749505910e
+    private:
+      us-east-1a:
+        id: subnet-0cc055d3aac2c38cf
+      us-east-1b:
+        id: subnet-009f7b4cceb70f43f
+nodeGroups:
+  - name: nodegrp-01
+    amiFamily: "Ubuntu2004"
+    privateNetworking: true
+    instancePrefix: eks
+    instanceName: instance
+    instanceType: t3.micro
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 6
+    subnets:
+      - subnet-0e831a1b92a49b718
+      - subnet-08157401a2ffbdac0
+    ssh:
+      publicKeyName: eks_key
+    securityGroups:
+      attachIDs: ['sg-06c792cec792cd909']
