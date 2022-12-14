@@ -29,8 +29,8 @@ nodeGroups:
     minSize: 2
     maxSize: 6
     subnets:
-      - subnet-0e831a1b92a49b718
-      - subnet-08157401a2ffbdac0
+      - subnet-0eb9dbe61d9469a71
+      - subnet-07e33ef749505910e
     ssh:
       publicKeyName: eks_key
     securityGroups:
