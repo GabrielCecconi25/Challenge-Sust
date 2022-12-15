@@ -6,18 +6,18 @@ metadata:
   region: us-east-1
   version: "1.21"
 vpc:
-  id: vpc-05d89af02a9b37af0
+  id: "vpc-0da4486de7f8f0fc7"
   subnets:
     public:
       us-east-1a:
-        id: subnet-0eb9dbe61d9469a71
+        id: "subnet-0c95b029c4010b1d7"
       us-east-1b:
-        id: subnet-07e33ef749505910e
+        id: "subnet-0f4e4523e24c62bd2"
     private:
       us-east-1a:
-        id: subnet-0cc055d3aac2c38cf
+        id: "subnet-0cdf9e7868eb05d9b"
       us-east-1b:
-        id: subnet-009f7b4cceb70f43f
+        id: "subnet-0d21cd178c6cbf5c4"
 nodeGroups:
   - name: nodegrp-01
     amiFamily: "Ubuntu2004"
@@ -29,9 +29,9 @@ nodeGroups:
     minSize: 2
     maxSize: 6
     subnets:
-      - subnet-0eb9dbe61d9469a71
-      - subnet-07e33ef749505910e
+      - subnet-0cdf9e7868eb05d9b
+      - subnet-0d21cd178c6cbf5c4
     ssh:
       publicKeyName: eks_key
     securityGroups:
-      attachIDs: ['sg-06c792cec792cd909']
+      attachIDs: ['sg-07ce9bb6edda0522f']
